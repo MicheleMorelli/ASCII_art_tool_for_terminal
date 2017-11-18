@@ -9,7 +9,7 @@ def draw_grid(grid,width):
         print('|',end = '')
         print(*row,'|', sep = '')
     print('|' * (width + 2))
-    print('COMMANDS:\nm\tmove/write modes\th\tclean screen\nn\tdelete mode\nq\texit')
+    print('COMMANDS:\nm - move/write mode\th - clean screen\t[ and ] - change brush\nn - delete mode\nq - exit')
 
 def clean_grid(grid):
     for y in range(height):
@@ -27,7 +27,7 @@ width = 64
 height = 16
 
 canvas = [[' ' for i in range(width)] for k in range(height)]
-brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_' ]
+brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_','$','¬','+','(',')' ]
 x = 0
 y = 0
 mode = 'move'
@@ -40,7 +40,7 @@ while inp != 'q':
         canvas[y][x] = prev
     elif mode == 'delete':
         canvas[y][x] = ' '
-        
+    #evaluate input    
     if inp == 'a' and x > 0:
         x -= 1
     elif inp == 'd' and x < width -1:
@@ -66,7 +66,7 @@ while inp != 'q':
         brush_cursor -= 1
     elif inp == ']' and brush_cursor < len(brushes) - 1:
         brush_cursor += 1
-    
+    #apply results depending on the mode
     if mode == 'write':
         canvas[y][x] = brushes[brush_cursor]
     elif mode == 'move':
@@ -74,7 +74,9 @@ while inp != 'q':
         canvas[y][x] = '@'
     elif mode == 'delete':
         canvas[y][x] = '%'
+    #draw
     clean_screen()
     draw_brushes(brushes,(len(brushes)), brush_cursor)
     draw_grid(canvas, width)
+
     inp = getch()
