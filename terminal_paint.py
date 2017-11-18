@@ -9,7 +9,13 @@ def draw_grid(grid,width):
         print('|',end = '')
         print(*row,'|', sep = '')
     print('|' * (width + 2))
-    print('COMMANDS:\nm\tmove/write modes\nn\tdelete mode\nq\texit')
+    print('COMMANDS:\nm\tmove/write modes\th\tclean screen\nn\tdelete mode\nq\texit')
+
+def clean_grid(grid):
+    for y in range(height):
+        for x in range(width):
+            grid[y][x] = ' '
+        
 
 width = 64
 height = 16
@@ -44,6 +50,10 @@ while inp != 'q':
             mode = 'delete'
         else:
             mode = 'move'
+    elif inp == 'h':
+        clean_grid(canvas)
+        mode = 'move'
+    
     if mode == 'write':
         canvas[y][x] = '#'
     elif mode == 'move':
