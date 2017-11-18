@@ -16,16 +16,27 @@ def clean_grid(grid):
         for x in range(width):
             grid[y][x] = ' '
         
+def draw_brushes(brushes, width, brush_cursor):
+    brush_selector = [' ' for i in range(width)]
+    brush_selector[brush_cursor] = '^'
+    print("BRUSHES:")
+    print(*brushes)
+    print(*brush_selector)
+
+
 
 width = 64
 height = 16
 
 canvas = [[' ' for i in range(width)] for k in range(height)]
+brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_' ]
 x = 0
 y = 0
 mode = 'move'
 inp = 'g'
 prev = ' '
+brush_cursor = 0
+
 while inp != 'q':
     if mode == 'move':
         canvas[y][x] = prev
@@ -53,15 +64,19 @@ while inp != 'q':
     elif inp == 'h':
         clean_grid(canvas)
         mode = 'move'
+    elif inp == '[' and brush_cursor > 0:
+        brush_cursor -= 1
+    elif inp == ']' and brush_cursor < len(brushes) - 1:
+        brush_cursor += 1
     
     if mode == 'write':
-        canvas[y][x] = '#'
+        canvas[y][x] = brushes[brush_cursor]
     elif mode == 'move':
         prev = canvas[y][x]
         canvas[y][x] = '@'
     elif mode == 'delete':
         canvas[y][x] = '%'
     clean_screen()
+    draw_brushes(brushes,(len(brushes)), brush_cursor)
     draw_grid(canvas, width)
     inp = getch()
-
