@@ -46,13 +46,13 @@ def export_drawing(grid):
         else:
             input('No worries - maybe next time!')
             return
-        
+    
     name = input("Name of the drawing?: ")
     s = ''
     for row in grid:
         for i in row:
             s += i 
-    s = str(s)
+        s+= '\\n'
     outfile.write("def draw_%s():\n    print(\"%s\")\n\n" % (name, s))
     outfile.close()
     print("Done!")
