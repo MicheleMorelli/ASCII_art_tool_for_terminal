@@ -23,8 +23,6 @@ def draw_brushes(brushes, width, brush_cursor):
     print(*brushes)
     print(*brush_selector)
 
-
-
 width = 64
 height = 16
 
