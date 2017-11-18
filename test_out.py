@@ -2,16 +2,16 @@ from os.path import exists
 import re
 from sys import exit
 
-target = './target.py'
-if exists(target):
-    print("The file %s exists." % target)
-    outfile = open(target , "a")
+target_file = './my_ASCII_drawings_functions.py'
+if exists(target_file):
+    print("The file %s exists." % target_file)
+    outfile = open(target_file , "a")
 else:
-    q = input("the file %s does not exist. Do you want to create it? (Y/N)" % target)
+    q = input("the file %s does not exist. Do you want to create it? (Y/N)" % target_file)
     if re.match('^[Yy]', q):
-        outfile = open(target, 'w+')
+        outfile = open(target_file, 'w+')
         outfile.write("#Created with the Terminal ASCII Paint app by Michele Morelli - https://github.com/MicheleMorelli\n\n")
-        outfile = open(target, 'a')
+        outfile = open(target_file, 'a')
     else:
         input('Goodbye!')
         exit()
