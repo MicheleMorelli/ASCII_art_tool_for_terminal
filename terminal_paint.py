@@ -13,6 +13,11 @@ cursor = [0,0]
 mode = 'write'
 inp = 'g'
 while inp != 'q':
+    x = cursor[1]
+    y = cursor[0]
+    if mode == 'move':
+        canvas[x][y] = ' '
+        
     if inp == 'a':
         cursor[0] -= 1
     elif inp == 'd':
@@ -30,6 +35,8 @@ while inp != 'q':
     y = cursor[0]
     if mode == 'write':
         canvas[x][y] = '#'
+    elif mode == 'move':
+        canvas[x][y] = '@'
     clean_screen()
     draw_grid(canvas)
     inp = getch()
