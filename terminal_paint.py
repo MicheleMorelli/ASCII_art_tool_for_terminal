@@ -12,7 +12,7 @@ def draw_grid(grid,width):
         print('|',end = '')
         print(*row,'|', sep = '')
     print('|' * (width + 2))
-    print('COMMANDS:\nm - move/write mode\th - clean screen\t[ and ] - change brush\nn - delete mode\to - export drawing\nq - exit')
+    print("COMMANDS:\nm - move/write mode\th - clean screen\t[ and ] - change brush\nn - delete mode\t o - export drawing\nq - exit")
 
 def clean_grid(grid):
     for y in range(height):
@@ -26,7 +26,7 @@ def draw_brushes(brushes, width, brush_cursor):
     print(*brushes)
     print(*brush_selector)
 
-def export_drawing():
+def export_drawing(grid):
     target_file = './my_ASCII_drawings_functions.py'
     if exists(target_file):
         print("The file %s exists." % target_file)
@@ -48,7 +48,12 @@ def export_drawing():
             return
         
     name = input("Name of the drawing?: ")
-    outfile.write("def draw_%s():\n    print('test')\n\n" % name)
+    s = ''
+    for row in grid:
+        for i in row:
+            s += i 
+    s = str(s)
+    outfile.write("def draw_%s():\n    print(\"%s\")\n\n" % (name, s))
     outfile.close()
     print("Done!")
 
@@ -96,7 +101,7 @@ while inp != 'q':
     elif inp == ']' and brush_cursor < len(brushes) - 1:
         brush_cursor += 1
     elif inp == 'o':
-        export_drawing()
+        export_drawing(canvas)
 
     #apply results depending on the mode
     if mode == 'write':
