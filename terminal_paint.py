@@ -51,6 +51,9 @@ def export_drawing(grid):
     s = ''
     for row in grid:
         for i in row:
+            #test to fix issue with backslash
+            if i == '\\':
+                i = '\\\\'
             s += i 
         s+= '\\n'
     outfile.write("def draw_%s():\n    print(\"%s\")\n\n" % (name, s))
