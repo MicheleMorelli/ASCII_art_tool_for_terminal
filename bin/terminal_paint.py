@@ -1,4 +1,8 @@
-from all_imports import *
+from getch_class import *
+from sys import exit
+from base_functions import *
+from export_drawing import export_drawing
+
 
 width = 64
 height = 16
@@ -69,3 +73,6 @@ while inp != 'q':
     draw_grid(canvas, width)
     #get input
     inp = getch()
+#cleans screen before exiting
+clean_screen()
+print("="*20+"\nGoodbye!\n"+"="*20)
