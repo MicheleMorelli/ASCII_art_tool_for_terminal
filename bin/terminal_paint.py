@@ -7,11 +7,11 @@ width = 64
 height = 16
 
 canvas = [[' ' for i in range(width)] for k in range(height)]
-brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_','$','¬','+','(',')' ]
+brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_','$','¬','+','(',')','.',':','<','>']
 x = 0
 y = 0
 mode = 'move'
-inp = 'g'
+inp = ' '
 prev = ' '
 brush_cursor = 0
 
