@@ -44,7 +44,7 @@ while inp != 'q':
             mode = 'move'
     #clean canvas
     elif inp == 'h':
-        clean_grid(canvas)
+        clean_grid(canvas, height, width )
         mode = 'move'
     #change brush
     elif inp == '[' and brush_cursor > 0:

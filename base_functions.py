@@ -9,7 +9,7 @@ def draw_grid(grid,width):
     print('|' * (width + 2)) 
     print("COMMANDS:\nm - move/write mode\th - clean screen\t[ and ] - change brush\nn - delete mode\t o - export drawing\nq - exit")
 
-def clean_grid(grid):
+def clean_grid(grid, height, width):
     for y in range(height):
         for x in range(width):
             grid[y][x] = ' ' 
