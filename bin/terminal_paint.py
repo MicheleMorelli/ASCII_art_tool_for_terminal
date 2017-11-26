@@ -1,7 +1,7 @@
 from getch_class import *
 from sys import exit
 from base_functions import *
-from export_drawing import export_drawing
+from export_drawing import *
 
 width = 64
 height = 16
@@ -54,7 +54,7 @@ while inp != 'q':
         brush_cursor -= 1
     elif inp == ']' and brush_cursor < len(brushes) - 1:
         brush_cursor += 1
-    #export
+    #export string
     elif inp == 'o':
         export_drawing(canvas)
 
