@@ -21,3 +21,13 @@ def draw_brushes(brushes, width, brush_cursor):
     print(*brushes)
     print(*brush_selector)
 
+
+def flood_fill(canvas,x, y, width, height, brushes, brush_cursor, previous_content):
+    in_the_grid = (x >= 0) and (x < width) and (y >= 0) and (y < height)
+    if not in_the_grid or canvas[y][x] != previous_content:
+        return
+    canvas[y][x] = brushes[brush_cursor]
+    flood_fill(canvas,x+1, y, width, height, brushes, brush_cursor, previous_content)
+    flood_fill(canvas,x-1, y, width, height, brushes, brush_cursor, previous_content)
+    flood_fill(canvas,x, y+1, width, height, brushes, brush_cursor, previous_content)
+    flood_fill(canvas,x, y-1, width, height, brushes, brush_cursor, previous_content)

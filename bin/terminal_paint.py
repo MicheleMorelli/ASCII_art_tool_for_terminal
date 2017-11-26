@@ -2,7 +2,6 @@ from getch_class import *
 from sys import exit
 from base_functions import *
 from export_drawing import export_drawing
-from flood_fill import flood_fill
 
 width = 64
 height = 16
@@ -61,7 +60,7 @@ while inp != 'q':
 
     #flood fill
     elif inp == 'j':
-        flood_fill(canvas,x,y, width, height, brushes, brush_cursor)
+        flood_fill(canvas,x,y, width, height, brushes, brush_cursor, canvas[y][x])
 
     #apply results depending on the mode
     if mode == 'write':
