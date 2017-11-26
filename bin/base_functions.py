@@ -1,13 +1,15 @@
 def clean_screen():
     print("\n"*120)
 
-def draw_grid(grid,width):
+def draw_grid(grid,width, mode):
+    mode_str = mode + " MODE"
+    number_of_spaces = width - len('COMMANDS:') - len(mode_str)
     print('_' * (width+2))
     for row in grid:
         print('|',end = '') 
         print(*row,'|', sep = '')
     print('|' * (width + 2)) 
-    print("COMMANDS:\nm - move/write mode\th - clean screen\t[ and ] - change brush\nn - delete mode \to - export drawing\tj - paint bucket\nq - exit")
+    print("COMMANDS:"+" " * number_of_spaces + mode_str + "\nm - move/write mode\th - clean screen\t[ and ] - change brush\nn - delete mode \to - export drawing\tj - paint bucket\nq - exit")
 
 def clean_grid(grid, height, width):
     for y in range(height):

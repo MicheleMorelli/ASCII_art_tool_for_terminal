@@ -17,20 +17,20 @@ def evaluate_input(inp, x,y, mode,height, width,canvas,brushes, brush_cursor, pr
         y += 1
     #move/write mode
     elif inp == 'm':
-        if mode == 'write':
-            mode = 'move'
+        if mode == 'WRITE':
+            mode = 'MOVE'
         else:
-            mode = 'write'
+            mode = 'WRITE'
     #eraser mode
     elif inp == 'n':
-        if mode != 'delete':
-            mode = 'delete'
+        if mode != 'ERASE':
+            mode = 'ERASE'
         else:
-            mode = 'move'
+            mode = 'MOVE'
     #clean canvas
     elif inp == 'h':
         clean_grid(canvas, height, width )
-        mode = 'move'
+        mode = 'MOVE'
     #change brush
     elif inp == '[' and brush_cursor > 0:
         brush_cursor -= 1
@@ -45,12 +45,12 @@ def evaluate_input(inp, x,y, mode,height, width,canvas,brushes, brush_cursor, pr
         flood_fill(canvas,x,y, width, height, brushes, brush_cursor, canvas[y][x])
 
     #apply results depending on the mode
-    if mode == 'write':
+    if mode == 'WRITE':
         canvas[y][x] = brushes[brush_cursor]
-    elif mode == 'move':
+    elif mode == 'MOVE':
         prev = canvas[y][x]
         canvas[y][x] = '@'
-    elif mode == 'delete':
+    elif mode == 'ERASE':
         canvas[y][x] = '%'
 
     return (x,y,mode,canvas,brush_cursor, prev)
