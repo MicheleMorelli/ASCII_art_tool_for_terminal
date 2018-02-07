@@ -1,8 +1,8 @@
-# Command Line Painter #
+# ASCII Art tool for the terminal #
 ## By Michele Morelli - 2017 ##
 ![vimrc](https://github.com/MicheleMorelli/terminal_paint/blob/master/doc/pics/example.png)
 
-This simple program allows to draw cool ASCII art in the command line quickly and easily, and to export it to use it in orderto make your Python programs look beter in the terminal.
+This simple program allows to draw cool ASCII art in the command line quickly and easily, and to export it to use it in order to make your Python programs look beter in the terminal.
 
 As for the commands, I was inspired heavily by Vim. 
 You move the cursor by using the wasd buttons, and can move/draw/erase depending on the mode you are in.
