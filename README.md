@@ -14,7 +14,3 @@ At the moment all the 'brushes' are simple ASCII glyphs. I want to expand it to 
 Among the other things, I am planning to add the possibility to export the drawings in different formats, and as strings for different languages.
 
 Have fun! :-)
-
-=============
-### DISCLAIMER: ###
-IN NO EVENT, UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING, SHALL I BE LIABLE FOR ANY LOSS, EXPENSE OR DAMAGE, OF ANY TYPE OR NATURE ARISING OUT OF THE USE OF, OR INABILITY TO USE THIS SOFTWARE OR PROGRAM, INCLUDING, BUT NOT LIMITED TO, CLAIMS, SUITS OR CAUSES OF ACTION INVOLVING ALLEGED INFRINGEMENT OF COPYRIGHTS, PATENTS, TRADEMARKS, TRADE SECRETS, OR UNFAIR COMPETITION.
