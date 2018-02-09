@@ -2,13 +2,15 @@ from getch_class import *
 from sys import exit
 from base_functions import *
 from evaluate_input import * 
+from os import get_terminal_size
 
 def main():
-    BOARD_WIDTH = 64
-    BOARD_HEIGHT = BOARD_WIDTH // 4
+    terminal = get_terminal_size()
+    CANVAS_WIDTH = terminal.columns - int(terminal.columns * .2)
+    CANVAS_HEIGHT = CANVAS_WIDTH // 4
     
-    width = BOARD_WIDTH
-    height = BOARD_HEIGHT
+    width = CANVAS_WIDTH
+    height = CANVAS_HEIGHT
     canvas = [[' ' for i in range(width)] for k in range(height)]
     brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_','$','¬','+','(',')','.',':','<','>']
     x = 0
