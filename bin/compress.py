@@ -29,6 +29,7 @@ def compress(s):
             c[s[i]] = 0
 
         del s[0:i + 1] #again, the ugly +1 workaround
+    # NOT REALLY NEEDED, so I commented it out;
     #compress with zlib
     #comp = zlib.compress((out + '\\n")').encode("ascii") ) TODO
     #print(comp)

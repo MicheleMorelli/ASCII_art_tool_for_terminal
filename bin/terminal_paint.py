@@ -1,4 +1,5 @@
 from getch_class import *
+from evaluate_input import * 
 from sys import exit
 from base_functions import *
 from evaluate_input import * 

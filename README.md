@@ -13,4 +13,20 @@ At the moment all the 'brushes' are simple ASCII glyphs. I want to expand it to 
 
 Among the other things, I am planning to add the possibility to export the drawings in different formats, and as strings for different languages.
 
+## How to use the ASCII Art command line tool ##
+
+Please note that this code has only been tested on Linux for now, so I am not sure whether it would work as expected in a Windows environment.
+
+You will need to have Python3 installed to use this tool.
+
+To use it:
+- Clone this repo somewhere your machine;
+- You can run it with:
+ $./ASCII_Art_Tool
+
+Alternatively, you can call:
+ $python3 bin/terminal_paint.py
+
+(The latter method has chances to work also on Windows). 
+
 Have fun! :-)
