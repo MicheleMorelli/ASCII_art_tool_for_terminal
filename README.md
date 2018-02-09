@@ -31,4 +31,20 @@ $python3 bin/terminal_paint.py
 ```
 (The latter method has chances to work also on Windows). 
 
+### COMMANDS: ###
+```
+m   switch between MOVE and WRITE mode
+n   switch to DELETE mode
+q   exit
+a   move/write left
+w   move/write up
+d   move/write right
+s   move/write down
+h   clean the canvas
+o   export the drawing
+[   choose brush on the left
+]   choose brush on the right
+j   'paint bucket' function 
+```
+
 Have fun! :-)
