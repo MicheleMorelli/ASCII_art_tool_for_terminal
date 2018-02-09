@@ -22,11 +22,13 @@ You will need to have Python3 installed to use this tool.
 To use it:
 - Clone this repo somewhere your machine;
 - You can run it with:
- $./ASCII_Art_Tool
-
+```
+$./ASCII_Art_Tool
+```
 Alternatively, you can call:
- $python3 bin/terminal_paint.py
-
+``` 
+$python3 bin/terminal_paint.py
+```
 (The latter method has chances to work also on Windows). 
 
 Have fun! :-)
