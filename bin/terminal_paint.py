@@ -3,33 +3,37 @@ from sys import exit
 from base_functions import *
 from evaluate_input import *
 
-width = 64
-height = 16
+def main():
+    width = 64
+    height = 16
+    canvas = [[' ' for i in range(width)] for k in range(height)]
+    brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_','$','¬','+','(',')','.',':','<','>']
+    x = 0
+    y = 0
+    mode = 'MOVE'
+    inp = ' '
+    prev = ' '
+    brush_cursor = 0
 
-canvas = [[' ' for i in range(width)] for k in range(height)]
-brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_','$','¬','+','(',')','.',':','<','>']
-x = 0
-y = 0
-mode = 'MOVE'
-inp = ' '
-prev = ' '
-brush_cursor = 0
+    #main loop
+    while inp != 'q':
+        if mode == 'MOVE':
+            canvas[y][x] = prev
+        elif mode == 'ERASE':
+            canvas[y][x] = ' '
+        #evaluate input and apply changes
+        x,y,mode,canvas,brush_cursor, prev = evaluate_input(inp, x,y, mode,height, width,canvas,brushes, brush_cursor, prev)
+        #draw everything
+        clean_screen()
+        draw_brushes(brushes,(len(brushes)), brush_cursor)
+        draw_grid(canvas, width,mode)
+        #get input
+        inp = getch()
 
-#main loop
-while inp != 'q':
-    if mode == 'MOVE':
-        canvas[y][x] = prev
-    elif mode == 'ERASE':
-        canvas[y][x] = ' '
-    #evaluate input and apply changes
-    x,y,mode,canvas,brush_cursor, prev = evaluate_input(inp, x,y, mode,height, width,canvas,brushes, brush_cursor, prev)
-    #draw everything
+    #cleans screen before exiting
     clean_screen()
-    draw_brushes(brushes,(len(brushes)), brush_cursor)
-    draw_grid(canvas, width,mode)
-    #get input
-    inp = getch()
+    print("="*20+"\nGoodbye!\n"+"="*20)
 
-#cleans screen before exiting
-clean_screen()
-print("="*20+"\nGoodbye!\n"+"="*20)
+
+if __name__ == '__main__':
+    main()
