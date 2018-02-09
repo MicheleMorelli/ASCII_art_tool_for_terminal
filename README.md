@@ -1,5 +1,5 @@
 # ASCII Art tool for the terminal #
-## By Michele Morelli - 2017 ##
+## By Michele Morelli - 2018 ##
 ![ASCII Art tool for the command line](https://github.com/MicheleMorelli/terminal_paint/blob/master/doc/pics/ASCII_image.gif)
 
 This simple program allows to draw cool ASCII art in the command line quickly and easily, and to export it to use it in order to make your Python programs look beter in the terminal.
