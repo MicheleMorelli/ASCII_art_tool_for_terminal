@@ -1,11 +1,14 @@
 from getch_class import *
 from sys import exit
 from base_functions import *
-from evaluate_input import *
+from evaluate_input import * 
 
 def main():
-    width = 64
-    height = 16
+    BOARD_WIDTH = 64
+    BOARD_HEIGHT = BOARD_WIDTH // 4
+    
+    width = BOARD_WIDTH
+    height = BOARD_HEIGHT
     canvas = [[' ' for i in range(width)] for k in range(height)]
     brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_','$','¬','+','(',')','.',':','<','>']
     x = 0
