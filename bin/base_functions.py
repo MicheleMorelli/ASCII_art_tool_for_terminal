@@ -6,10 +6,14 @@ def draw_grid(grid,width, mode):
     number_of_spaces = width - len('COMMANDS:') - len(mode_str)
     print('_' * (width+2))
     for row in grid:
+        
+        # FIX01: Fixed unpacker issue with older versions of Python 
         print('|',end = '') 
         for i in row:
             print (i, end='')
         print("|")
+        # FIX01 END ----------------------------------------------
+
     print('|' * (width + 2)) 
     print("COMMANDS:"+" " * number_of_spaces + mode_str + "\nm - move/write mode\th - clean screen\t[ and ] - change brush\nn - delete mode \to - export drawing\tj - paint bucket\nq - exit")
 

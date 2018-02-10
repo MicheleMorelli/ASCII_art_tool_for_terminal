@@ -17,7 +17,7 @@ Among the other things, I am planning to add the possibility to export the drawi
 
 Please note that this code has only been tested on Linux for now, so I am not sure whether it would work as expected in a Windows environment.
 
-You will need to have <b>Python3.5</b> installed to use this tool (I will need to fix an error thrownwith upackers  by previous versions).
+You will need to have <b>Python3.5+</b> installed to use this tool (I will need to fix an error thrown with upackers  by previous versions).
 
 To use it:
 - Clone this repo somewhere your machine;
