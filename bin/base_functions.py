@@ -7,7 +7,9 @@ def draw_grid(grid,width, mode):
     print('_' * (width+2))
     for row in grid:
         print('|',end = '') 
-        print(*row,'|', sep = '')
+        for i in row:
+            print (i, end='')
+        print("|")
     print('|' * (width + 2)) 
     print("COMMANDS:"+" " * number_of_spaces + mode_str + "\nm - move/write mode\th - clean screen\t[ and ] - change brush\nn - delete mode \to - export drawing\tj - paint bucket\nq - exit")
 
