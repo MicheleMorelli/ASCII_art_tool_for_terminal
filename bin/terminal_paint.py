@@ -7,11 +7,9 @@ from os import get_terminal_size
 
 def main():
     terminal = get_terminal_size()
-    CANVAS_WIDTH = terminal.columns - int(terminal.columns * .2)
-    CANVAS_HEIGHT = CANVAS_WIDTH // 4
+    width = terminal.columns - int(terminal.columns * .2)
+    height = width // 4
     
-    width = CANVAS_WIDTH
-    height = CANVAS_HEIGHT
     canvas = [[' ' for i in range(width)] for k in range(height)]
     brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_','$','¬','+','(',')','.',':','<','>']
     x = 0
