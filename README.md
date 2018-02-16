@@ -27,7 +27,7 @@ $./ASCII_Art_Tool
 ```
 Alternatively, you can call:
 ``` 
-$python3 bin/terminal_paint.py
+$python3 bin/run.py
 ```
 (The latter method has chances to work also on Windows). 
 

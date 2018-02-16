@@ -1,4 +1,12 @@
-#Getch class taken from http://code.activestate.com/recipes/134892/                                                                                                              
+#******************************************************************************
+#* Title: "GETCH()-LIKE UNBUFFERED CHARACTER READING FROM STDIN ON BOTH WINDOWS
+#* AND UNIX (PYTHON RECIPE)"
+#* Author: Danny Yoo 
+#* Date: 21st June 2002
+#* Code version: N/A
+#* Availability: http://code.activestate.com/recipes/134892/
+#******************************************************************************
+
 class _Getch:
     """Gets a single character from standard input.  Does not echo to the screen."""
     def __init__(self):

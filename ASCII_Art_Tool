@@ -1,2 +1,2 @@
 #!/bin/bash 
-python3 bin/terminal_paint.py
+python3 bin/run.py
