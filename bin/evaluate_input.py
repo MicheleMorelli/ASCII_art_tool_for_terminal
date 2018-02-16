@@ -2,6 +2,26 @@ from base_functions import *
 from export_drawing import *
 
 def evaluate_input(inp, x,y, mode,height, width,canvas,brushes, brush_cursor, prev):
+    '''
+    Takes the user's input as an argument and modifies the canvas 2d list based
+    on the value of 'mode' and the current brush.
+
+    Arguments:
+        inp             the user's input - i.e. a char
+        x               x of current location
+        y               y of current location
+        mode            current mode 
+        height          heigth of the canvas
+        width           width of the canvas
+        canvas          a 2d list
+        brushes         the list of brushes
+        brush_cursor    the index of the current brush
+        prev            the previous value
+
+    Returns:
+        (x,y,mode,canvas,brush_cursor, prev)
+
+    '''
     #evaluate input 
     #left
     if inp == 'a' and x > 0:

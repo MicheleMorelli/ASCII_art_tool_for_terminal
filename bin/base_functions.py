@@ -14,10 +14,12 @@ def clean_screen():
 def draw_grid(grid,width, mode):
     '''
     Draws the canvas, based on the values of the 2d-list 'grid'.
+
     Arguments:
         grid    aka the canvas aka 2d list 
         width   width of the canvas
         mode    current mode (e.g. "WRITE", or "MOVE")
+
     Returns:
         None
     '''
@@ -39,10 +41,12 @@ def draw_grid(grid,width, mode):
 def clean_grid(grid, height, width):
     '''
     Sets all the values of the canvas (aka the grid) to " ".
+
     Arguments:
         grid    aka the canvas aka 2d list 
         heigth  heigth of the canvas
         width   width of the canvas
+
     Returns:
         None
     '''
@@ -53,10 +57,12 @@ def clean_grid(grid, height, width):
 def draw_brushes(brushes, width, brush_cursor):
     '''
     This function draws the brushes based on the list defined in terminal_paint.
+
     Arguments:
         brushes     list of characters, that are used as ASCII 'brushes' 
         width       width of the canvas
         brush_cursor int, indicating the current index of the brushes list 
+
     Returns:
         None
     '''
@@ -72,6 +78,7 @@ def flood_fill(canvas,x, y, width, height, brushes, brush_cursor, previous_conte
     Flood fill function, which uses a simple recursive algorithm.
     TODO: there is a bug that happens when this function is used on a cell that has
     the same brush type as the current.
+
     Arguments:
         canvas          The canvas, that is, a 2-d list.
         x               Current x position
@@ -81,6 +88,7 @@ def flood_fill(canvas,x, y, width, height, brushes, brush_cursor, previous_conte
         brushes         Brushes 1D list
         brush_cursor    int, indicating the current index of the brushes list
         previous_content previous content of the cell
+
     Returns:
         None
 
