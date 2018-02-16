@@ -1,3 +1,16 @@
+'''
+ASCII art tool for the command line
+
+This small program allows to draw ASCII art on the command line, 
+and export it as a Python print() function.
+
+Author:
+    Michele Morelli
+
+Year:
+    2018
+'''
+
 from getch_class import *
 from evaluate_input import * 
 from sys import exit
@@ -6,6 +19,19 @@ from evaluate_input import *
 from os import get_terminal_size
 
 def main():
+    '''
+    Main loop. 
+    TODO - refactoring needed!
+    
+    Arguments:
+        None
+
+    Returns:
+        None
+
+
+    '''
+
     terminal = get_terminal_size()
     width = terminal.columns - int(terminal.columns * .2)
     height = width // 4
