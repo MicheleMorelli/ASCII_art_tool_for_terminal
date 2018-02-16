@@ -1,6 +1,25 @@
 import zlib
 
 def compress(s):
+    '''
+    This function takes a string and converts it into a Python-compatible
+    string to be used in a print statement. This may come handy for 
+    very long strings with many repetitions.
+
+    Example:
+        converts
+        "aaaa    bbbb ccc\n"
+        to
+        "a"*4 + " "*4 + "b"*4 +" " + "c"*3 + "\n"
+
+    Arguments:
+        s a string
+
+    Returns:
+        a string in the ([any substring*] * n...) to be used with a print statement 
+        in a Python script.
+
+    '''
     s = list(s)
     c = dict()
     out = 'print("'
