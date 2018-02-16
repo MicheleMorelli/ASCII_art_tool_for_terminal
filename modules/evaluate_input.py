@@ -62,7 +62,10 @@ def evaluate_input(inp, x,y, mode,height, width,canvas,brushes, brush_cursor, pr
 
     #flood fill
     elif inp == 'j':
-        flood_fill(canvas,x,y, width, height, brushes, brush_cursor, canvas[y][x])
+        # BUG002 fix - checking that the current brush is not the same as
+        # current symbol.
+        if canvas[y][x] != brushes[brush_cursor]:
+            flood_fill(canvas,x,y, width, height, brushes, brush_cursor, canvas[y][x])
 
     #apply results depending on the mode
     if mode == 'WRITE':
