@@ -27,7 +27,7 @@ $./ASCII_Art_Tool
 ```
 Alternatively, you can call:
 ``` 
-$python3 bin/run.py
+$python3 modules/run.py
 ```
 (The latter method has chances to work also on Windows). 
 

@@ -1,2 +1,2 @@
 #!/bin/bash 
-python3 bin/run.py
+python3 modules/run.py
