@@ -3,6 +3,16 @@ import re
 from compress import compress
 
 def export_drawing(grid):
+    '''
+    This function exports the canvas as a python print() statement, so that it
+    can be used on other scripts.
+
+    Arguments:
+        grid    The canvas, i.e. a 2D list
+
+    Returns:
+        None
+    '''
     target_file = './my_ASCII_drawings_functions.py'
     if exists(target_file):
         print("The file %s exists." % target_file)

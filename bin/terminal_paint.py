@@ -15,8 +15,6 @@ def terminal_paint():
 
     Returns:
         None
-
-
     '''
 
     terminal = get_terminal_size()
