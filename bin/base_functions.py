@@ -15,9 +15,9 @@ def draw_grid(grid,width, mode):
     '''
     Draws the canvas, based on the values of the 2d-list 'grid'.
     Arguments:
-        grid aka the canvas aka 2d list 
-        width width of the canvas
-        mode current mode (e.g. "WRITE", or "MOVE")
+        grid    aka the canvas aka 2d list 
+        width   width of the canvas
+        mode    current mode (e.g. "WRITE", or "MOVE")
     Returns:
         None
     '''
@@ -40,9 +40,9 @@ def clean_grid(grid, height, width):
     '''
     Sets all the values of the canvas (aka the grid) to " ".
     Arguments:
-        grid aka the canvas aka 2d list 
-        heigth heigth of the canvas
-        width width of the canvas
+        grid    aka the canvas aka 2d list 
+        heigth  heigth of the canvas
+        width   width of the canvas
     Returns:
         None
     '''
@@ -51,6 +51,15 @@ def clean_grid(grid, height, width):
             grid[y][x] = ' ' 
             
 def draw_brushes(brushes, width, brush_cursor):
+    '''
+    This function draws the brushes based on the list defined in terminal_paint.
+    Arguments:
+        brushes     list of characters, that are used as ASCII 'brushes' 
+        width       width of the canvas
+        brush_cursor int, indicating the current index of the brushes list 
+    Returns:
+        None
+    '''
     brush_selector = [' ' for i in range(width)]
     brush_selector[brush_cursor] = '^' 
     print("BRUSHES:")
@@ -59,6 +68,23 @@ def draw_brushes(brushes, width, brush_cursor):
 
 
 def flood_fill(canvas,x, y, width, height, brushes, brush_cursor, previous_content):
+    '''
+    Flood fill function, which uses a simple recursive algorithm.
+    TODO: there is a bug that happens when this function is used on a cell that has
+    the same brush type as the current.
+    Arguments:
+        canvas          The canvas, that is, a 2-d list.
+        x               Current x position
+        y               Current y position
+        width           Width of the canvas
+        heigth          Heigth of the canvas
+        brushes         Brushes 1D list
+        brush_cursor    int, indicating the current index of the brushes list
+        previous_content previous content of the cell
+    Returns:
+        None
+
+    '''
     in_the_grid = (x >= 0) and (x < width) and (y >= 0) and (y < height)
     if not in_the_grid or canvas[y][x] != previous_content:
         return
