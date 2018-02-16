@@ -22,7 +22,7 @@ def terminal_paint():
     height = width // 4
     
     canvas = [[' ' for i in range(width)] for k in range(height)]
-    brushes = ['#','*','^','~','0','/','\\','=', '|', '-','_','$','¬','+','(',')','.',':','<','>']
+    brushes = ['#','*','^','~','0','/','=', '|', '-','_','$','¬','+','(',')','.',':','<','>']
     x = 0
     y = 0
     mode = 'MOVE'
